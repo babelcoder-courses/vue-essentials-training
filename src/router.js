@@ -19,7 +19,7 @@ const routes = [
   },
   {
     path: "/users",
-    component: () => import("@/modules/users/components/PostList.vue"),
+    component: () => import("@/modules/users/components/UserList.vue"),
   },
   {
     path: "/users/:id",
