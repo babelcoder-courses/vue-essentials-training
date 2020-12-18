@@ -1,0 +1,10 @@
+{
+	"editor.formatOnSave": true,
+	"emmet.includeLanguages": {
+		"postcss": "css"
+	},
+	"editor.tabSize": 2,
+	"prettier.disableLanguages": [
+		"vue"
+	]
+}
