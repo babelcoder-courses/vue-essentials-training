@@ -1,5 +1,13 @@
-<template></template>
+<template>
+  <layout />
+</template>
 
 <script>
-export default {};
+import Layout from "@/modules/ui/components/Layout.vue";
+
+export default {
+  components: {
+    Layout,
+  },
+};
 </script>
