@@ -1,6 +1,5 @@
 <template>
   <div>
-    <router-link to="/posts/new">Create Post</router-link>
     <div>Count - {{ count }}</div>
   </div>
   <ul>

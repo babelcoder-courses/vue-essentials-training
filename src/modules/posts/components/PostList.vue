@@ -1,10 +1,14 @@
 <template>
-  <div>
-    <router-link to="/posts/new">Create Post</router-link>
+  <div class="flex justify-between">
     <div>Count - {{ count }}</div>
+    <router-link to="/posts/new" class="btn">Create Post</router-link>
   </div>
   <ul>
-    <li v-for="{ id, title } of posts" :key="id">
+    <li
+      v-for="{ id, title } of posts"
+      :key="id"
+      class="hover:text-green-500 transition-colors"
+    >
       <router-link :to="`/posts/${id}`">
         {{ title }}
       </router-link>

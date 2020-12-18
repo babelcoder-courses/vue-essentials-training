@@ -5,7 +5,7 @@
       <dd>{{ value }}</dd>
     </template>
   </dl>
-  <button @click="goBack">Go Back</button>
+  <button @click="goBack" class="btn">Go Back</button>
 </template>
 
 <script>
