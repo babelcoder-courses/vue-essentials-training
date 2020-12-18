@@ -1,4 +1,7 @@
 <template>
+  <div>
+    <div>Count - {{ count }}</div>
+  </div>
   <ul>
     <li v-for="{ id, name } of users" :key="id">
       <router-link :to="`/users/${id}`">
@@ -9,13 +12,19 @@
 </template>
 
 <script>
-import useFetch from "@/lib/useFetch";
+import { computed, onMounted } from "vue";
+import { useStore } from "vuex";
 
 export default {
   setup() {
-    const users = useFetch("/users");
+    const store = useStore();
+    const users = computed(() => store.state.users.items);
+    const count = computed(() => store.getters["users/count"]);
+
+    onMounted(() => store.dispatch("users/loadUsers"));
 
     return {
+      count,
       users,
     };
   },
