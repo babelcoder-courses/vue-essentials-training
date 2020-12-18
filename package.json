@@ -1,24 +1,16 @@
 {
   "name": "vue-essentials",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/babelcoder-courses/vue-essentials-training.git",
+  "author": "Nuttavut Thongjor <n.thongjor@gmail.com>",
+  "license": "MIT",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build"
+    "start": "concurrently -k yarn:start:api yarn:start:ui",
+    "start:api": "yarn --cwd api start",
+    "start:ui": "yarn --cwd ui dev"
   },
   "dependencies": {
-    "axios": "^0.21.0",
-    "vee-validate": "^4.0.6",
-    "vue": "^3.0.4",
-    "vue-router": "4",
-    "vuex": "^4.0.0-rc.2",
-    "yup": "^0.32.8"
-  },
-  "devDependencies": {
-    "@tailwindcss/postcss7-compat": "^2.0.2",
-    "@vue/compiler-sfc": "^3.0.4",
-    "autoprefixer": "^9",
-    "postcss": "^7",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
-    "vite": "^1.0.0-rc.13"
+    "concurrently": "^5.2.0"
   }
 }
