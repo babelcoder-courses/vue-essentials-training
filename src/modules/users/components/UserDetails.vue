@@ -9,17 +9,22 @@
 </template>
 
 <script>
+import { useStore } from "vuex";
 import { useRoute, useRouter } from "vue-router";
-
-import useFetch from "@/lib/useFetch";
+import { computed, onMounted } from "vue";
 
 export default {
   setup() {
     const router = useRouter();
-    const route = useRoute();
-    const user = useFetch(`/users/${route.params.id}`);
+    const {
+      params: { id },
+    } = useRoute();
+    const store = useStore();
+    const user = computed(() => store.state.users.items[0]);
 
     const goBack = () => router.go(-1);
+
+    onMounted(() => store.dispatch("users/loadUser", { id }));
 
     return {
       user,
