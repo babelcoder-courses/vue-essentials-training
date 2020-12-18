@@ -1,4 +1,7 @@
 <template>
+  <div>
+    <router-link to="/posts/new">Create Post</router-link>
+  </div>
   <ul>
     <li v-for="{ id, title } of posts" :key="id">
       <router-link :to="`/posts/${id}`">

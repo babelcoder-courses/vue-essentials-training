@@ -10,6 +10,10 @@ const routes = [
     component: () => import("@/modules/posts/components/PostList.vue"),
   },
   {
+    path: "/posts/new",
+    component: () => import("@/modules/posts/components/NewPost.vue"),
+  },
+  {
     path: "/posts/:id",
     component: () => import("@/modules/posts/components/PostDetails.vue"),
   },
